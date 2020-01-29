@@ -8,13 +8,28 @@ spring:
     driver-class-name: org.h2.Driver
     username: sa
     password:  
+  kafka:
+    template:
+      default-topic: dev-gim-test
+    producer:
+      client-id: goinmul-producer-local
+      bootstrap-servers: 172.21.100.109:9092,172.21.100.110:9092,172.21.100.116:9092
+      acks: 1
+      compression-type: lz4 # gzip lz4 snappy
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer # org.springframework.kafka.support.serializer.JsonSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer # org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      client-id: goinmul-consumer
+      group-id: goinmul-consumer-local
+      bootstrap-servers: 172.21.100.109:9092,172.21.100.110:9092,172.21.100.116:9092
+      auto-offset-reset: earliest # latest earliest 
+      enable-auto-commit: true
+      auto-commit-interval: 1000
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer # org.springframework.kafka.support.serializer.JsonDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer # org.springframework.kafka.support.serializer.JsonDeserializer
 
 logging:
   config: classpath:logback-local.xml
-  
-privacy:
-  crypto: 
-    use: false
 
 ---
 spring:
@@ -24,7 +39,3 @@ spring:
 
 logging:
   config: classpath:logback-dev.xml
-
-privacy:
-  crypto:
-    use: false

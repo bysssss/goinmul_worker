@@ -49,39 +49,18 @@
   <dependencies>
   	<dependency>
 		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-web</artifactId>
-	</dependency>
-	<dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-aop</artifactId>
-	</dependency>
-	<dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-tomcat</artifactId>
-		<scope>provided</scope>
-	</dependency>
-	<dependency>
-		<groupId>org.apache.tomcat.embed</groupId>
-		<artifactId>tomcat-embed-jasper</artifactId>
-		<scope>provided</scope>
-	</dependency>
-	<dependency>
-		<groupId>javax.servlet</groupId>
-		<artifactId>jstl</artifactId>
-	</dependency>
-	<!-- https://www.mkyong.com/spring-boot/spring-boot-web-jsp-no-java-compiler-available -->
-	<!-- No idea why tomcat-embed-jasper didn’t pick up the ecj compiler, to fix this, declares the Eclipse ecj manually -->
-	<dependency>
-		<groupId>org.eclipse.jdt.core.compiler</groupId>
-		<artifactId>ecj</artifactId>
-		<version>4.6.1</version>
-		<scope>provided</scope>
+		<artifactId>spring-boot-starter</artifactId>
 	</dependency>
 	<!-- @ConfigurationProperties -->
 	<dependency>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-configuration-processor</artifactId>
 		<optional>true</optional>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.springframework.kafka</groupId>
+		<artifactId>spring-kafka</artifactId>
 	</dependency>
 	
 	<dependency>
@@ -121,22 +100,6 @@
 		<artifactId>lombok</artifactId>
 		<scope>provided</scope>
 		<optional>true</optional>
-	</dependency>
-	
-	<dependency>
-    	<groupId>io.springfox</groupId>
-    	<artifactId>springfox-swagger-common</artifactId>
-    	<version>2.9.2</version>
-	</dependency>
-	<dependency>
-    	<groupId>io.springfox</groupId>
-    	<artifactId>springfox-swagger2</artifactId>
-    	<version>2.9.2</version>
-	</dependency>
-	<dependency>
-    	<groupId>io.springfox</groupId>
-    	<artifactId>springfox-swagger-ui</artifactId>
-    	<version>2.9.2</version>
 	</dependency>
 	
 	<dependency>
